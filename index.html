@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<title>M4-TWITTER</title>
 	<link rel="stylesheet" href="css/styles.css">
 	<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
@@ -44,39 +45,6 @@
 				</div>
 
 			</div>
-
-			<script id="thread-template" type="text/x-handlebars-template">
-			<div class="thread">
-				{{{tweet}}}
-
-				</div>
-				<div class="replies">
-					{{{compose}}}
-				<div>
-			</script>
-
-			<script id="tweet-template" type="text/x-handlebars-template">
-
-				<div class="tweet">
-			        <img src="{{{profile_pic}}}">
-			        <div class="body">
-			            <div class="title">{{username}}</div>
-			            <div class="message">{{{message}}}</div>
-			        </div>
-			    </div>
-				
-			</script>
-			<script id="compose-template" type="text/x-handlebars-template">
-									
-				<form class="compose">
-					<textarea placeholder="Compose new Tweet..."></textarea>
-					<div>
-						<span class="count">140</span>
-						<button>Send</button>
-					</div>
-				</form>
-
-			</script>
 
 			<!-- Thread with 2 Replies -->
 			<div class="thread">
@@ -123,16 +91,36 @@
 	</main>
 
 	<script id="template-tweet" type="text/x-handlebars-template">
+		<div class="tweet">
+			<img src="{{{profile_pic}}}">
+			<div class="body">
+				<div class="title">{{username}}</div>
+				<div class="message">{{message}}</div>
+			</div>
+		</div>
 	</script>
 
 	<script id="template-thread" type="text/x-handlebars-template">
+		<div class="thread">
+
+			{{{tweet}}}
+
+			<div class="replies">
+				
+			{{{compose}}}
+
+			</div>
 	</script>
 
 	<script id="template-compose" type="text/x-handlebars-template">
+		<form class="compose">
+			<textarea placeholder="Compose new Tweet..."></textarea>
+			<div>
+				<span class="count">140</span>
+				<button>Send</button>
+			</div>
+		</form>
 	</script>
 
-<script>
-	var a = $('div');
-</script>
 </body>
 </html>
